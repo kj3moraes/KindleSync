@@ -154,7 +154,7 @@
         z-index: 1000;
         height: 11rem;
         width: 11rem;
-        background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+        background: #192857;
         border-radius: 50%;
         transform: rotate(15deg);
         box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
@@ -196,7 +196,7 @@
       }
 
       .product__name {
-        background: linear-gradient(to bottom, #9be15d, #00e3ae);
+        background: linear-gradient(to bottom, #4a6fc6, #192857);
         padding: 1rem;
         font-family: 'Megrim', sans-serif;
         font-size: 4rem;
@@ -270,8 +270,8 @@
       <h1>🌽 Node Farm 🥦</h1>
 
       <figure class="product">
-        <div class="product__organic {%NOT_ORGANIC%}"><h5>Organic</h5></div>
-        <a href="#" class="product__back">
+        <div class="product__organic {%NOT_READ%}"><h5>Read!</h5></div>
+        <a href="/overview" class="product__back">
           <span class="emoji-left">👈</span>Back
         </a>
         <div class="product__hero">
@@ -292,11 +292,6 @@
           <p><span class="emoji-left">📦</span>{%QUANTITY%}</p>
           <p><span class="emoji-left">🏷</span>{%PRICE%}€</p>
         </div>
-  
-        <a href="#" class="product__link">
-          <span class="emoji-left">🛒</span>
-          <span>Add to shopping card ({%PRICE%}€)</span>
-        </a>
   
         <p class="product__description">
           {%DESCRIPTION%}

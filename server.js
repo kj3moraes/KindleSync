@@ -2,8 +2,6 @@ const http = require('http');
 const url = require('url');
 const fs = require('fs');
 
-// Placeholders for the path names
-
 // Replace the placeholders with the data
 const replaceTemplate = (temp, product) => {
     let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
@@ -16,7 +14,7 @@ const replaceTemplate = (temp, product) => {
     output = output.replace(/{%ID%}/g, product.id);
 
     if (!product.organic) {
-        output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
+        output = output.replace(/{%NOT_READ%}/g, 'not-read');
     }
     return output;
 }
@@ -33,16 +31,14 @@ const tempProductPage = fs.readFileSync(`${__dirname}/templates/template-product
 // Create a server asynchronously
 const server = http.createServer((req, res) => {
 
-    // Extract the URL
-    pathName = req.url;
-    console.log(pathName);
-
-    const { query, pathname} = url.parse(req.url, true);
+    // Parse the URL
+    const { query, pathname } = url.parse(req.url, true);
+    console.log(pathname)
 
     // Homepage
-    if (pathname == "/" || pathname == "/overview") {
+    if (pathname === "/" || pathname === "/overview") {
         res.writeHead(200, {
-            'Content-type': 'text/html',
+            'content-type': 'text/html',
         });
 
         /*
@@ -53,10 +49,17 @@ const server = http.createServer((req, res) => {
         const overviewHTML = tempOverview.replace('{%PRODUCT_CARDS%}', cardsHtml);
         res.end(overviewHTML);
 
-        
+
     // Product page
-    } else if (pathname == "/product") {
-        res.end("This is the CURRENT OVERVIEW page!")
+    } else if (pathname === "/product") {
+        
+        res.writeHead(200, {
+            'Content-type': 'text/html',
+        });
+        const product = productData[query.id];
+        const output = replaceTemplate(tempProductPage, product);
+        res.end(output);
+
 
     // API
     } else if (pathname == "/api") {
@@ -72,9 +75,9 @@ const server = http.createServer((req, res) => {
         });
         res.end("<h1>Page not found!</h1>");
     }
-})
+});
 
 server.listen(8000, 'localhost', () => {
-    console.log("Listening to requests on port 8000");
+    console.log("Listening to requests for localhost on port 8000",);
 });
 

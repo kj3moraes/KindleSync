@@ -2,7 +2,7 @@
   {
     "id": 0,
     "productName": "The Hitchhiker's Guide to the Galaxy",
-    "image": "",
+    "image": "./assets/images/thhgttg.jpg",
     "by": "Douglas Adams",
     "nutrients": "Vitamin ",
     "price": "6.50",

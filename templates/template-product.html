@@ -13,7 +13,7 @@
       href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/ear-of-maize_1f33d.png"
     />
 
-    <title>{%PRODUCTNAME%} 🥑 /// NODE FARM</title>
+    <title>{%PRODUCTNAME%}</title>
 
     <style>
       *,
@@ -39,7 +39,7 @@
       }
 
       h1 {
-        font-family: 'Megrim', sans-serif;
+        font-family: 'Futura' , 'Trebuchet MS' ,'Arial' ,sans-serif; 
         font-size: 6rem;
         color: white;
         transform: skewY(-5deg);
@@ -68,7 +68,7 @@
       }
 
       .product {
-        width: 60rem;
+        width: 75rem;
         margin: 0 auto;
         margin-top: 9rem;
         background: white;
@@ -147,7 +147,7 @@
         left: 19rem;
       }
 
-      .product__organic {
+      .product__read {
         position: absolute;
         top: -4rem;
         right: -4rem;
@@ -163,7 +163,7 @@
         justify-content: center;
       }
 
-      .product__organic h5 {
+      .product__read h5 {
         font-weight: 900;
         text-transform: uppercase;
         font-size: 1.8rem;
@@ -192,14 +192,24 @@
 
       .product__back:hover,
       .product__back:active {
-        background-color: #79e17b;
+        background-color: #4a6fc6;
       }
 
       .product__name {
         background: linear-gradient(to bottom, #4a6fc6, #192857);
-        padding: 1rem;
+        padding: 2rem;
         font-family: 'Megrim', sans-serif;
-        font-size: 4rem;
+        font-size: 5rem;
+        color: white;
+        text-align: center;
+        word-spacing: 2px;
+      }
+
+      .product__author {
+        background: #00e3ae;
+        padding: 2rem;
+        font-family: 'Megrim', sans-serif;
+        font-size: 5rem;
         color: white;
         text-align: center;
         word-spacing: 2px;
@@ -259,7 +269,7 @@
         margin-left: 1rem;
       }
 
-      .not-organic {
+      .not-read {
         display: none;
       }
     </style>
@@ -267,30 +277,21 @@
 
   <body>
     <div class="container">
-      <h1>🌽 Node Farm 🥦</h1>
+      <h1>Kindle Sync 📚</h1>
 
       <figure class="product">
-        <div class="product__organic {%NOT_READ%}"><h5>Read!</h5></div>
+        <div class="product__read {%NOT_READ%}"><h5>Read!</h5></div>
         <a href="/overview" class="product__back">
           <span class="emoji-left">👈</span>Back
         </a>
         <div class="product__hero">
-          <span class="product__emoji product__emoji--1"></span>
-          <span class="product__emoji product__emoji--2">{%IMAGE%}</span>
-          <span class="product__emoji product__emoji--3">{%IMAGE%}</span>
-          <span class="product__emoji product__emoji--4">{%IMAGE%}</span>
-          <span class="product__emoji product__emoji--5">{%IMAGE%}</span>
-          <span class="product__emoji product__emoji--6">{%IMAGE%}</span>
-          <span class="product__emoji product__emoji--7">{%IMAGE%}</span>
-          <span class="product__emoji product__emoji--8">{%IMAGE%}</span>
-          <span class="product__emoji product__emoji--9">{%IMAGE%}</span>
+          
         </div>
         <h2 class="product__name">{%PRODUCTNAME%}</h2>
+        <h2 class="product__author">{%BY%}</h2>
         <div class="product__details">
-          <p><span class="emoji-left">🌍</span>From {%FROM%}</p>
-          <p><span class="emoji-left">❤️</span>{%NUTRIENTS%}</p>
-          <p><span class="emoji-left">📦</span>{%QUANTITY%}</p>
-          <p><span class="emoji-left">🏷</span>{%PRICE%}€</p>
+          <p>{%NUTRIENTS%}</p>
+          <p>{%PRICE%}€</p>
         </div>
   
         <p class="product__description">

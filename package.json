@@ -1,0 +1,24 @@
+{
+  "name": "kindlesync",
+  "version": "1.0.0",
+  "description": "A webapp to sync and publicly display your kindle notes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kj3moraes/KindleSync.git"
+  },
+  "keywords": [
+    "kindle",
+    "notes"
+  ],
+  "author": "Keane",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kj3moraes/KindleSync/issues"
+  },
+  "homepage": "https://github.com/kj3moraes/KindleSync#readme"
+}

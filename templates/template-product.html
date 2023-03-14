@@ -105,45 +105,11 @@
         z-index: 10;
       }
 
-      .product__emoji--2 {
-        top: -6rem;
-        left: 9rem;
-      }
-
-      .product__emoji--3 {
-        top: -4rem;
-        right: 15rem;
-      }
-
-      .product__emoji--4 {
-        top: -5rem;
-        right: 2rem;
-        z-index: 10;
-      }
-
-      .product__emoji--5 {
-        bottom: -9rem;
-        left: 18rem;
-      }
-
-      .product__emoji--6 {
-        bottom: -8rem;
-        left: 5rem;
-      }
-
-      .product__emoji--7 {
-        bottom: -12rem;
-        right: 14rem;
-      }
-
-      .product__emoji--8 {
-        bottom: -8rem;
-        right: -2rem;
-      }
-
-      .product__emoji--9 {
-        top: -7rem;
-        left: 19rem;
+      .product__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
       }
 
       .product__read {
@@ -283,9 +249,8 @@
         <a href="/overview" class="product__back">
           <span class="emoji-left">👈</span>Back
         </a>
-        <img src="{%IMAGE%}">
         <div class="product__hero">
-          
+        <span class="product__image"><img src="{%IMAGE%}"></span>  
         </div>
         <h2 class="product__name">{%PRODUCTNAME%}</h2>
         <h2 class="product__author">{%BY%}</h2>

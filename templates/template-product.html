@@ -63,12 +63,12 @@
       }
 
       .container {
-        width: 95rem;
+        width: 100rem;
         margin: 0 auto;
       }
 
       .product {
-        width: 75rem;
+        width: 80rem;
         margin: 0 auto;
         margin-top: 9rem;
         background: white;
@@ -78,7 +78,7 @@
 
       .product__hero {
         position: relative;
-        height: 22rem;
+        width: 100%;
         overflow: hidden;
       }
 
@@ -106,10 +106,7 @@
       }
 
       .product__image {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
+        display: block;
       }
 
       .product__read {
@@ -174,7 +171,7 @@
         background: #00e3ae;
         padding: 2rem;
         font-family: 'Futura' , 'Trebuchet MS' ,'Arial' ,sans-serif; 
-        font-size: 5rem;
+        font-size: 3.5rem;
         color: white;
         text-align: center;
         word-spacing: 2px;
@@ -182,11 +179,8 @@
 
       .product__details {
         background-color: #eee;
-        padding: 4rem 6rem;
-        font-size: 1.9rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1.5rem;
+        padding: 2rem 2rem;
+        font-size: 2rem;
       }
 
       .product__description {
@@ -255,10 +249,9 @@
         <h2 class="product__name">{%PRODUCTNAME%}</h2>
         <h2 class="product__author">{%BY%}</h2>
         <div class="product__details">
-          <p>{%NUTRIENTS%}</p>
-          <p>{%PRICE%}€</p>
+            <p style="text-align: center;">{%PRICE%}€</p>
         </div>
-  
+        
         <p class="product__description">
           {%DESCRIPTION%}
         </p>

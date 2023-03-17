@@ -16,6 +16,7 @@ Copyright 2023 Keane Moraes
 
 const http = require('http');
 const url = require('url');
+const path = require('path');
 const fs = require('fs');
 
 // Replace the placeholders with the data
@@ -23,12 +24,11 @@ const replaceTemplate = (temp, product) => {
     let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
     output = output.replace(/{%IMAGE%}/g, product.image);
     output = output.replace(/{%BY%}/g, product.by);
-    output = output.replace(/{%NUTRIENTS%}/g, product.nutrients);
     output = output.replace(/{%PRICE%}/g, product.price);
     output = output.replace(/{%DESCRIPTION%}/g, product.description);
     output = output.replace(/{%ID%}/g, product.id);
 
-    if (!product.organic) {
+    if (!product.read) {
         output = output.replace(/{%NOT_READ%}/g, 'not-read');
     }
     return output;
@@ -49,6 +49,8 @@ const server = http.createServer((req, res) => {
     // Parse the URL
     const { query, pathname } = url.parse(req.url, true);
 
+    var filePath = __dirname + pathname
+
     // Homepage
     if (pathname === "/" || pathname === "/overview") {
         res.writeHead(200, {
@@ -64,9 +66,9 @@ const server = http.createServer((req, res) => {
         res.end(overviewHTML);
 
 
-    // Product page
+        // Product page
     } else if (pathname === "/product") {
-        
+
         res.writeHead(200, {
             'Content-type': 'text/html',
         });
@@ -75,23 +77,51 @@ const server = http.createServer((req, res) => {
         res.end(output);
 
 
-    // API
+        // API
     } else if (pathname == "/api") {
         res.writeHead(200, {
             'Content-type': 'application/json'
         })
         res.end(data);
 
-    // 404 page
+        // 404 page
     } else {
-        res.writeHead(404, {
-            'Content-type': 'text/html',
-        });
-        res.end("<h1>Page not found!</h1>");
-    }
-});
+        fs.exists(filePath, function (exists) {
+            if (!exists) {
+                res.writeHead(404, {
+                    'Content-type': 'text/html',
+                });
+                res.end("<h1>Page not found!</h1>");
+            } else {
+
+                // Extracting file extension
+                var ext = path.extname(filePath);
+
+                // Setting default Content-Type
+                var contentType = "text/plain";
+
+                // Checking if the extension of
+                // image is '.png'
+                if (ext === ".jpg") {
+                    contentType = "image/jpeg";
+                }
+
+                // Setting the headers
+                res.writeHead(200, {
+                    "Content-Type": contentType
+                });
+
+                // Reading the file
+                fs.readFile(filePath,
+                    function (err, content) {
+                        // Serving the image
+                        res.end(content);
+                    });
+            }
+        })
+    };
+})
 
 server.listen(8000, 'localhost', () => {
     console.log("Listening to requests for localhost on port 8000",);
 });
-

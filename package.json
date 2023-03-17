@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/kj3moraes/KindleSync/issues"
   },
-  "homepage": "https://github.com/kj3moraes/KindleSync#readme"
+  "homepage": "https://github.com/kj3moraes/KindleSync#readme",
+  "nodemonConfig": {
+    "ext":"js,html"
+  }
+
 }

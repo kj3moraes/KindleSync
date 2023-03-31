@@ -4,7 +4,6 @@
     "productName": "The Hitchhiker's Guide to the Galaxy",
     "image": "./dev-data/assets/images/thhgttg.jpg",
     "by": "Douglas Adams",
-    "nutrients": "Vitamin ",
     "price": "6.50",
     "read": false,
     "description": "The novel is an adaptation of the first four parts of Adams's radio series of the same name, centering on the adventures of the only man to survive the destruction of Earth; while roaming outer space, he comes to learn the truth behind Earth's existence. The novel was first published in London on 12 October 1979."
@@ -14,7 +13,6 @@
     "productName": "Stories We Tell Ourselves",
     "image": "./dev-data/assets/images/swto.jpg",
     "by": "Richard Holloway",
-    "nutrients": "Vitamin A",
     "price": "5.00",
     "read": true,
     "description": "Throughout history we have told ourselves stories to try and make sense of our place in the universe. Richard Holloway takes us on a personal, scientific and philosophical journey to explore what he believes the answers to the biggest of questions are. He examines what we know about the universe into which we are propelled at birth and from which we are expelled at death, the stories we have told about where we come from, and the stories we tell to get through this muddling experience of life. Thought-provoking, revelatory, compassionate and playful, Stories We Tell Ourselves is a personal reckoning with life’s mysteries by one of the most important and beloved thinkers of our time."
@@ -24,7 +22,6 @@
     "productName": "East of Eden",
     "image": "./dev-data/assets/images/eoe.jpg",
     "by": "John Steinbeck",
-    "nutrients": "Vitamin C, Vitamin K",
     "price": "5.50",
     "read": false,
     "description": "This sprawling and often brutal novel, set in the rich farmlands of California's Salinas Valley, follows the intertwined destinies of two families--the Trasks and the Hamiltons--whose generations helplessly reenact the fall of Adam and Eve and the poisonous rivalry of Cain and Abel."
@@ -34,7 +31,6 @@
     "productName": "Superintelligence: Paths, Dangers, Strategies",
     "image": "",
     "by": "Nick Bostrom",
-    "nutrients": "Vitamin C, Vitamin K",
     "price": "5.50",
     "read": true,
     "description": "If machine brains one day come to surpass human brains in general intelligence, then this new superintelligence could become very powerful. As the fate of the gorillas now depends more on us humans than on the gorillas themselves, so the fate of our species then would come to depend on the actions of the machine superintelligence. But we have one advantage: we get to make the first move. Will it be possible to construct a seed AI or otherwise to engineer initial conditions so as to make an intelligence explosion survivable? How could one achieve a controlled detonation?"
@@ -44,7 +40,6 @@
     "productName": "Human Compatible: Artificial Intelligence and the Problem of Control",
     "image": "",
     "by": "Stuart Russell",
-    "nutrients": "Vitamin C, Vitamin K",
     "price": "5.50",
     "read": false,
     "description": "Broccoli is known to be a hearty and tasty vegetable which is rich in dozens of nutrients. It is said to pack the most nutritional punch of any vegetable. When we think about green vegetables to include in our diet, broccoli is one of the foremost veggies to come to our mind. Broccoli is a cruciferous vegetable and part of the cabbage family, which includes vegetables such as Brussel sprouts and kale. Although the tastes are different, broccoli and these other vegetables are from the same family."

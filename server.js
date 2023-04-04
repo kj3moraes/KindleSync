@@ -18,6 +18,16 @@ const http = require('http');
 const url = require('url');
 const path = require('path');
 const fs = require('fs');
+const slugify = require('slugify');
+
+// Read in the data from the JSON file
+var data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+var productData = JSON.parse(data); // Convert the data to a JSON object
+
+const slugs = productData.map(el => slugify(el.productName, {
+    lower: true
+}));
+console.log(slugs);
 
 // Replace the placeholders with the data
 const replaceTemplate = (temp, product) => {
@@ -34,10 +44,6 @@ const replaceTemplate = (temp, product) => {
     return output;
 }
 
-// Read in the data from the JSON file
-var data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
-var productData = JSON.parse(data); // Convert the data to a JSON object
-
 // Read in the template files
 const tempCard= fs.readFileSync(`${__dirname}/templates/template-card.html`, 'utf-8');
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'utf-8');
@@ -48,6 +54,7 @@ const server = http.createServer((req, res) => {
 
     // Parse the URL
     const { query, pathname } = url.parse(req.url, true);
+    console.log(query.id    , pathname);
 
     var filePath = __dirname + pathname
 

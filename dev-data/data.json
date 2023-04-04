@@ -38,7 +38,7 @@
   {
     "id": 4,
     "productName": "Human Compatible: Artificial Intelligence and the Problem of Control",
-    "image": "",
+    "image": "./dev-data/assets/images/hc.jpg",
     "by": "Stuart Russell",
     "price": "5.50",
     "read": false,
